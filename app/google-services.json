@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "304303355791",
+    "firebase_url": "https://bsiet-49f30.firebaseio.com",
+    "project_id": "bsiet-49f30",
+    "storage_bucket": "bsiet-49f30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304303355791:android:18bddfd15da23ea664fdfa",
+        "android_client_info": {
+          "package_name": "com.example.bsiet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304303355791-enr2gj17qqme6j654dbsvmbjhb5a5087.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bsiet",
+            "certificate_hash": "0c11e4320a46f2ebde0ea8ef11efca9e1eb1eafd"
+          }
+        },
+        {
+          "client_id": "304303355791-pcr6rjcf0u9n0opk83o3mi72camf01gf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkM1I5UkdHF3GEJeO0Zwvk9XSZ77Cm9yw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304303355791-pcr6rjcf0u9n0opk83o3mi72camf01gf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

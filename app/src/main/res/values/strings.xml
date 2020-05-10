@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BSIET</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="todo">TODO</string>
+    <string name="enrollment">enrollment</string>
+    <string name="registration">Registration</string>
+    <string name="first_name">first name</string>
+    <string name="middle_name">middle name</string>
+    <string name="last_name">last name</string>
+    <string name="email">email</string>
+    <string name="mobile_no">mobile no</string>
+    <string name="student">Student</string>
+    <string name="faculty">Faculty</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="next">next</string>
+    <string name="prefix">+91</string>
+</resources>
