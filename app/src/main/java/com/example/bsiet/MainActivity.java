@@ -7,7 +7,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         pass_label=(TextInputLayout)findViewById(R.id.pass_label);
         signin=(Button)findViewById(R.id.signIn);
         signup=(Button)findViewById(R.id.signUp);
-        firebaseDatabase=FirebaseDatabase.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference=firebaseDatabase.getReference("users/user1");
 
         signin.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 uname = username.getText().toString().trim();
                 pass = password.getText().toString().trim();
 
-                /*if (uname.length() == 0) {
+                if (uname.length() == 0) {
                     user_label.setError("Empty field");
                 } else if (!uname.matches("[a-zA-Z0-9]+")) {
                     user_label.setError("special symbols are not allowed");
@@ -67,40 +66,37 @@ public class MainActivity extends AppCompatActivity {
                     pass_label.setError("should contain at least one symbol and uppercase-lowercase and numbers");
                 } else {
                     pass_label.setError(null);
-                }*/
+                }
 
-                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Map<String,Object> user1=(Map<String,Object>) dataSnapshot.getValue();
-                        s_user=user1.get("username").toString();
-                        s_pass=user1.get("password").toString();
-                    }
+                        Map <String,Object> userdata = (Map<String,Object>)dataSnapshot.getValue();
+                        s_user=userdata.get("username").toString();
+                        s_pass=userdata.get("password").toString();
 
+                        if (user_label.getError()==null && pass_label.getError()==null) {
+                            if (uname.equals(s_user)) {
+                                if (pass.equals(s_pass)) {
+                                    Toast.makeText(getApplicationContext(), "Welcome " + uname, Toast.LENGTH_LONG).show();
+                                }
+                                if (!pass.equals(s_pass)) {
+                                    pass_label.setError("incorrect password");
+                                }
+                            }
+                            if (!uname.equals(s_user)){
+                                user_label.setError("invalid user");
+                            }
+                        }
+                    }
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Log.d("exception",""+databaseError.getMessage());
+
                     }
                 });
-
-                if (user_label.getError()==null && pass_label.getError()==null) {
-                    if (uname.equals(s_user)) {
-                        if (pass.equals(s_pass)) {
-                            Toast.makeText(getApplicationContext(), "Welcome " + uname, Toast.LENGTH_LONG).show();
-                        }
-                        if (!pass.equals(s_pass)) {
-                            pass_label.setError("incorrect password");
-                        }
-                    }
-                    if (!uname.equals(s_user)){
-                        user_label.setError("invalid user");
-                    }
-                }
             }
         });
-        //databaseReference.child("username").setValue(uname);
-        //databaseReference.child("password").setValue(pass);
-        //TODO users must generate dynamically with a unique number
+
         //TODO user must be searched in database and then username and password must be validated
 
         signup.setOnClickListener(new View.OnClickListener() {
@@ -119,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
     public void hideKeyboard(View view) {
         InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
