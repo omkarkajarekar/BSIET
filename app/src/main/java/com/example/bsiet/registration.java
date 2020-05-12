@@ -21,11 +21,12 @@ import java.util.Map;
 
 
 public class registration extends AppCompatActivity {
-    Intent student,faculty;
+    Intent student_screen,faculty_screen;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     TextInputEditText first_name,middle_name,last_name,mobile,email;
     RadioGroup radioGroup;
+    RadioButton student,faculty;
     LinearLayout linearLayout;
     Button next;
     String value,firstname,middlename,lastname,emailadd,mobileno;
@@ -34,6 +35,8 @@ public class registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         radioGroup = (RadioGroup) findViewById(R.id.role_selection);
+        student=(RadioButton)findViewById(R.id.student);
+        faculty=(RadioButton)findViewById(R.id.faculty);
         first_name=(TextInputEditText)findViewById(R.id.first_name);
         middle_name=(TextInputEditText)findViewById(R.id.middle_name);
         last_name=(TextInputEditText)findViewById(R.id.last_name);
@@ -60,18 +63,29 @@ public class registration extends AppCompatActivity {
                 insertValues.put("mobile",mobileno);
 
                 value = ((RadioButton)findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
+                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+                        if(checkedId==student.getId()){
+
+                        }
+                        if(checkedId==faculty.getId()){
+
+                        }
+                    }
+                });
                 if (value.equals("Student")){
                     String key=databaseReference.push().getKey();
                     databaseReference.child("Student").child(key).setValue(insertValues);
-                    /*student=new Intent(getBaseContext(),registration_student.class);
-                    startActivity(student);*/
+                    student_screen=new Intent(getBaseContext(),registration_student.class);
+                    startActivity(student_screen);
 
                 }
                 if (value.equals("Faculty")) {
                     String key=databaseReference.push().getKey();
                     databaseReference.child("Faculty").child(key).setValue(insertValues);
-                    /*faculty=new Intent(getBaseContext(),registration_faculty.class);
-                    startActivity(faculty);*/
+                    faculty_screen=new Intent(getBaseContext(),registration_faculty.class);
+                    startActivity(faculty_screen);
                 }
             }
         });
