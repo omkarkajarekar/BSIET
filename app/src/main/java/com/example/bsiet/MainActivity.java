@@ -18,6 +18,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
@@ -71,9 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Map <String,Object> userdata = (Map<String,Object>)dataSnapshot.getValue();
-                        s_user=userdata.get("username").toString();
-                        s_pass=userdata.get("password").toString();
+                        /*Query query1 = databaseReference.orderByChild("username").equalTo(uname);
+                        query1.addValueEventListener();*/
+//                        Map <String,Object> userdata = (Map<String,Object>)dataSnapshot.getValue();
+//                        s_user=userdata.get("username").toString();
+//                        s_pass=userdata.get("password").toString();
 
                         if (user_label.getError()==null && pass_label.getError()==null) {
                             if (uname.equals(s_user)) {

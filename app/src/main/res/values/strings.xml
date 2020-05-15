@@ -17,16 +17,16 @@
     <string name="sign_up">Sign Up</string>
     <string name="next">next</string>
     <string name="prefix">+91</string>
-    <string name="create_username">Create username</string>
+    <string name="create_user">Create username</string>
     <string name="alternate_mobile_no">Alternate Mobile no</string>
     <string name="joining_year">Joining year</string>
     <string name="select_department">Select Department</string>
     <string name="designation">Designation</string>
     <string name="staff_id">Staff ID</string>
     <string name="teacher_registration">Teacher registration</string>
-    <string name="create_password">Create password</string>
-    <string name="retype_password">Retype password</string>
-    <string name="register">register</string>
+    <string name="create_pass">Create password</string>
+    <string name="retype_pass">Retype password</string>
+    <string name="register_student">register</string>
     <string name="create_password">Create password</string>
     <string name="create_username">Create username</string>
     <string name="parent_mobile_no">Parent Mobile no</string>
@@ -36,6 +36,6 @@
     <string name="enrollment_no">Enrollment no</string>
     <string name="student_registration">Student registration</string>
     <string name="retype_password">Retype password</string>
-    <string name="register">register</string>
+    <string name="register_faculty">register</string>
     <string name="select_branch">Select Branch</string>
 </resources>

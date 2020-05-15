@@ -55,36 +55,35 @@ public class registration extends AppCompatActivity {
                 emailadd = email.getText().toString().trim();
                 mobileno = mobile.getText().toString().trim();
 
-                Map<String,Object> insertValues = new HashMap<>();
-                insertValues.put("first_name",firstname);
-                insertValues.put("middle_name",middlename);
-                insertValues.put("last_name",lastname);
-                insertValues.put("email",emailadd);
-                insertValues.put("mobile",mobileno);
+//                Map<String,Object> insertValues = new HashMap<>();
+//                insertValues.put("first_name",firstname);
+//                insertValues.put("middle_name",middlename);
+//                insertValues.put("last_name",lastname);
+//                insertValues.put("email",emailadd);
+//                insertValues.put("mobile",mobileno);
 
                 value = ((RadioButton)findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        if(checkedId==student.getId()){
-
-                        }
-                        if(checkedId==faculty.getId()){
-
-                        }
-                    }
-                });
                 if (value.equals("Student")){
-                    String key=databaseReference.push().getKey();
-                    databaseReference.child("Student").child(key).setValue(insertValues);
-                    student_screen=new Intent(getBaseContext(),registration_student.class);
+//                    String key=databaseReference.push().getKey();
+//                    databaseReference.child("Student").child(key).setValue(insertValues);
+                    student_screen=new Intent(registration.this,registration_student.class);
+                    student_screen.putExtra("first_name",firstname);
+                    student_screen.putExtra("middle_name",middlename);
+                    student_screen.putExtra("last_name",lastname);
+                    student_screen.putExtra("email",emailadd);
+                    student_screen.putExtra("mobile",mobileno);
                     startActivity(student_screen);
 
                 }
                 if (value.equals("Faculty")) {
-                    String key=databaseReference.push().getKey();
-                    databaseReference.child("Faculty").child(key).setValue(insertValues);
-                    faculty_screen=new Intent(getBaseContext(),registration_faculty.class);
+//                    String key=databaseReference.push().getKey();
+//                    databaseReference.child("Faculty").child(key).setValue(insertValues);
+                    faculty_screen=new Intent(registration.this,registration_faculty.class);
+                    faculty_screen.putExtra("first_name",firstname);
+                    faculty_screen.putExtra("middle_name",middlename);
+                    faculty_screen.putExtra("last_name",lastname);
+                    faculty_screen.putExtra("email",emailadd);
+                    faculty_screen.putExtra("mobile",mobileno);
                     startActivity(faculty_screen);
                 }
             }

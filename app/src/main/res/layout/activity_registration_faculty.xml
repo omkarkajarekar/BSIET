@@ -49,7 +49,7 @@
                 android:hint="@string/staff_id">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/enrollment_no"
+                    android:id="@+id/staff"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -180,7 +180,7 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="17dp"
-                android:text="@string/register" />
+                android:text="@string/register_faculty" />
 
         </LinearLayout>
     </ScrollView>

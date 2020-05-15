@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="30dp"
                 android:fontFamily="serif-monospace"
                 android:text="@string/student_registration"
                 android:textAlignment="center"
@@ -89,23 +89,6 @@
                     android:layout_height="wrap_content"
                     android:maxLength="4"
                     android:inputType="number"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/admission"
-                android:layout_width="277dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="17dp"
-                android:hint="@string/admission_year"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
-
-                <AutoCompleteTextView
-                    android:id="@+id/admission_year"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -198,7 +181,7 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="17dp"
-                android:text="@string/register" />
+                android:text="@string/register_student" />
 
         </LinearLayout>
     </ScrollView>
